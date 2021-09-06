@@ -1,0 +1,588 @@
+using System;
+using System.Diagnostics;
+using System.Text;
+using System.Threading;
+
+namespace JogoDeLouco
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var inicio = "Oi";
+
+            foreach (var character in inicio)
+            {
+                Console.Write(character);
+                Thread.Sleep(30);
+            }
+            Console.WriteLine("");
+            var favorita = "Sabia que eu tenho uma tecla favorita?" 
+                + Environment.NewLine + "Será que você consegue adivinhar qual é?";
+
+            foreach (var character in favorita)
+            {
+                Console.Write(character);
+                Thread.Sleep(30);
+            }
+            
+            try
+            {
+                if (Console.ReadKey().Key == ConsoleKey.F)
+                {
+
+                    Console.Clear();
+                    var legal = "Parabéns...";
+
+                    foreach (var character in legal)
+                    {
+                        Console.Write(character);
+                        Thread.Sleep(30);
+                    }
+                    Console.WriteLine();
+                    var sw = new Stopwatch();
+                    var s = new ConsoleSpinner();
+                    sw.Start();
+                    while (sw.ElapsedMilliseconds < 6000)
+                    {
+                        Thread.Sleep(100); // simulate some work being done
+                        s.UpdateProgress();
+                    }
+                    sw.Stop();
+
+                    Console.Clear();
+                    var aindaTaAqui = "Ainda ta aqui?";
+
+                    foreach (var character in aindaTaAqui)
+                    {
+                        Console.Write(character);
+                        Thread.Sleep(30);
+                    }          
+                    Console.WriteLine("");
+                    var escolhe = "Aproveita e escolhe uma carta então... :)";
+
+                    foreach (var character in escolhe)
+                    {
+                        Console.Write(character);
+                        Thread.Sleep(30);
+                    }
+
+                    var myString =
+                                            " _____  _____  _____"
+                    + Environment.NewLine + "|A .  ||9    ||8    |"
+                    + Environment.NewLine + "| /.\\ ||^ ^ ^||^ ^ ^|"
+                    + Environment.NewLine + "|(_._)||^ ^ ^|| ^ ^ |"
+                    + Environment.NewLine + "|  |  ||^ ^ ^||^ ^ ^|"
+                    + Environment.NewLine + "|____A||____6||____8|"
+                    + Environment.NewLine;
+
+                    Console.WriteLine("");
+
+                    foreach (var character in myString)
+                    {
+                        Console.Write(character);
+                        Thread.Sleep(30);
+                    }
+                    
+                    while (Console.ReadKey().Key != ConsoleKey.A || Console.ReadKey().Key != ConsoleKey.D9 || Console.ReadKey().Key != ConsoleKey.D8)
+                    {
+                        
+                        var burro = "Que?";
+
+                        foreach (var character in burro)
+                        {
+                            Console.Write(character);
+                            Thread.Sleep(30);
+                        }
+                        Console.WriteLine("");
+                        if (Console.ReadKey().Key == ConsoleKey.A)
+                        {
+                            Console.Clear();
+                            var pensamentoVoamComoOVento = "Deixa eu pensar...";
+
+                            foreach (var character in pensamentoVoamComoOVento)
+                            {
+                                Console.Write(character);
+                                Thread.Sleep(30);
+                            }
+                            Console.WriteLine();
+                            using (var progress = new ProgressBar())
+                            {
+                                for (int i = 0; i <= 100; i++)
+                                {
+                                    progress.Report((double)i / 100);
+                                    Thread.Sleep(20);
+                                }
+                            }
+                            var jaPenso = "Ok, já pensei...";
+
+                            foreach (var character in jaPenso)
+                            {
+                                Console.Write(character);
+                                Thread.Sleep(30);
+                            }
+                            Console.Clear();
+                            var carta = "Você escolheu essa carta?";
+
+                            foreach (var character in carta)
+                            {
+                                Console.Write(character);
+                                Thread.Sleep(30);
+                            }
+                            Console.WriteLine("");
+
+                            var essaAqui =
+                                                    " _____ "
+                            + Environment.NewLine + "|9    |"
+                            + Environment.NewLine + "|^ ^ ^|"
+                            + Environment.NewLine + "|^ ^ ^|"
+                            + Environment.NewLine + "|^ ^ ^|"
+                            + Environment.NewLine + "|____6|";
+                            foreach (var character in essaAqui)
+                            {
+                                Console.Write(character);
+                                Thread.Sleep(30);
+                            }
+
+                            Console.WriteLine();
+                            var simnao = "s ou n?";
+
+                            foreach (var character in simnao)
+                            {
+                                Console.Write(character);
+                                Thread.Sleep(30);
+                            }
+
+                            if (Console.ReadKey().Key == ConsoleKey.S)
+                            {
+                                Console.Clear();
+                                var mentira = "Mentira! Foi essa aqui! "
+                                + Environment.NewLine +
+                                                        " _____ "
+                                + Environment.NewLine + "|A .  |"
+                                + Environment.NewLine + "| /.\\ |"
+                                + Environment.NewLine + "|(_._)|"
+                                + Environment.NewLine + "|  |  |"
+                                + Environment.NewLine + "|____A|";
+
+                                foreach (var character in mentira)
+                                {
+                                    Console.Write(character);
+                                    Thread.Sleep(30);
+                                }
+                                Console.WriteLine();
+                                var dormir = "Agora vou voltar a dormir" + Environment.NewLine + "Tchau!";
+
+                                foreach (var character in dormir)
+                                {
+                                    Console.Write(character);
+                                    Thread.Sleep(30);
+                                }
+                                Environment.Exit(0);
+                            }
+                            else if (Console.ReadKey().Key == ConsoleKey.N)
+                            {
+                                Console.Clear();
+                                var acertou = "Então foi essa aqui! "
+                                + Environment.NewLine +
+                                                        " _____ "
+                                + Environment.NewLine + "|A .  |"
+                                + Environment.NewLine + "| /.\\ |"
+                                + Environment.NewLine + "|(_._)|"
+                                + Environment.NewLine + "|  |  |"
+                                + Environment.NewLine + "|____A|";
+
+                                foreach (var character in acertou)
+                                {
+                                    Console.Write(character);
+                                    Thread.Sleep(30);
+                                }
+                                Console.WriteLine();
+                                var dormir = "Agora vou voltar a dormir" + Environment.NewLine + "Tchau!";
+
+                                foreach (var character in dormir)
+                                {
+                                    Console.Write(character);
+                                    Thread.Sleep(30);
+                                }
+                                Environment.Exit(0);
+                            }
+
+                        }
+                        if (Console.ReadKey().Key == ConsoleKey.D9)
+                        {
+                            Console.Clear();
+                            var pensamentoVoamComoOVento = "Deixa eu pensar...";
+
+                            foreach (var character in pensamentoVoamComoOVento)
+                            {
+                                Console.Write(character);
+                                Thread.Sleep(30);
+                            }
+                            Console.WriteLine();
+                            using (var progress = new ProgressBar())
+                            {
+                                for (int i = 0; i <= 100; i++)
+                                {
+                                    progress.Report((double)i / 100);
+                                    Thread.Sleep(20);
+                                }
+                            }
+                            var jaPenso = "Ok, já pensei...";
+
+                            foreach (var character in jaPenso)
+                            {
+                                Console.Write(character);
+                                Thread.Sleep(30);
+                            }
+                            Console.Clear();
+                            var carta = "Você escolheu essa carta?";
+
+                            foreach (var character in carta)
+                            {
+                                Console.Write(character);
+                                Thread.Sleep(30);
+                            }
+                            Console.WriteLine("");
+
+                            var essaAquia =
+                                                    " _____ "
+                            + Environment.NewLine + "|A .  |"
+                            + Environment.NewLine + "| /.\\ |"
+                            + Environment.NewLine + "|(_._)|"
+                            + Environment.NewLine + "|  |  |"
+                            + Environment.NewLine + "|____A|";
+                            foreach (var character in essaAquia)
+                            {
+                                Console.Write(character);
+                                Thread.Sleep(30);
+                            }
+
+                            Console.WriteLine();
+                            var simnao = "s ou n?";
+
+                            foreach (var character in simnao)
+                            {
+                                Console.Write(character);
+                                Thread.Sleep(30);
+                            }
+
+                            if (Console.ReadKey().Key == ConsoleKey.S)
+                            {
+                                Console.Clear();
+                                var mentira = "Mentira! Foi essa aqui! "
+                                + Environment.NewLine +
+                                                        " _____ "
+                                + Environment.NewLine + "|9    |"
+                                + Environment.NewLine + "|^ ^ ^|"
+                                + Environment.NewLine + "|^ ^ ^|"
+                                + Environment.NewLine + "|^ ^ ^|"
+                                + Environment.NewLine + "|____6|";
+
+                                foreach (var character in mentira)
+                                {
+                                    Console.Write(character);
+                                    Thread.Sleep(30);
+                                }
+                                Console.WriteLine();
+                                var dormir = "Agora vou voltar a dormir" + Environment.NewLine + "Tchau!";
+
+                                foreach (var character in dormir)
+                                {
+                                    Console.Write(character);
+                                    Thread.Sleep(30);
+                                }
+                                Environment.Exit(0);
+                            }
+                            else if (Console.ReadKey().Key == ConsoleKey.N)
+                            {
+                                Console.Clear();
+                                var acertou = "Então foi essa aqui! "
+                                + Environment.NewLine +
+                                                        " _____ "
+                                + Environment.NewLine + "|9    |"
+                                + Environment.NewLine + "|^ ^ ^|"
+                                + Environment.NewLine + "|^ ^ ^|"
+                                + Environment.NewLine + "|^ ^ ^|"
+                                + Environment.NewLine + "|____6|";
+
+                                foreach (var character in acertou)
+                                {
+                                    Console.Write(character);
+                                    Thread.Sleep(30);
+                                }
+                                Console.WriteLine();
+                                var dormir = "Agora vou voltar a dormir" + Environment.NewLine + "Tchau!";
+
+                                foreach (var character in dormir)
+                                {
+                                    Console.Write(character);
+                                    Thread.Sleep(30);
+                                }
+                                Environment.Exit(0);
+                            }
+
+                        }
+                        if (Console.ReadKey().Key == ConsoleKey.D8)
+                        {
+                            Console.Clear();
+                            var pensamentoVoamComoOVento = "Deixa eu pensar...";
+
+                            foreach (var character in pensamentoVoamComoOVento)
+                            {
+                                Console.Write(character);
+                                Thread.Sleep(30);
+                            }
+                            Console.WriteLine();
+                            using (var progress = new ProgressBar())
+                            {
+                                for (int i = 0; i <= 100; i++)
+                                {
+                                    progress.Report((double)i / 100);
+                                    Thread.Sleep(20);
+                                }
+                            }
+                            var jaPenso = "Ok, já pensei...";
+
+                            foreach (var character in jaPenso)
+                            {
+                                Console.Write(character);
+                                Thread.Sleep(30);
+                            }
+                            Console.Clear();
+                            var carta = "Você escolheu essa carta?";
+
+                            foreach (var character in carta)
+                            {
+                                Console.Write(character);
+                                Thread.Sleep(30);
+                            }
+                            Console.WriteLine("");
+
+                            var essaAqui =
+                                                    " _____ "
+                            + Environment.NewLine + "|9    |"
+                            + Environment.NewLine + "|^ ^ ^|"
+                            + Environment.NewLine + "|^ ^ ^|"
+                            + Environment.NewLine + "|^ ^ ^|"
+                            + Environment.NewLine + "|____6|";
+                            foreach (var character in essaAqui)
+                            {
+                                Console.Write(character);
+                                Thread.Sleep(30);
+                            }
+
+                            Console.WriteLine();
+                            var simnao = "s ou n?";
+
+                            foreach (var character in simnao)
+                            {
+                                Console.Write(character);
+                                Thread.Sleep(30);
+                            }
+
+                            if (Console.ReadKey().Key == ConsoleKey.S)
+                            {
+                                Console.Clear();
+                                var mentira = "Mentira! Foi essa aqui! "
+                                + Environment.NewLine +
+                                                        " _____ "
+                                + Environment.NewLine + "|8    |"
+                                + Environment.NewLine + "|^ ^ ^|"
+                                + Environment.NewLine + "| ^ ^ |"
+                                + Environment.NewLine + "|^ ^ ^|"
+                                + Environment.NewLine + "|____8|";
+
+
+                                foreach (var character in mentira)
+                                {
+                                    Console.Write(character);
+                                    Thread.Sleep(30);
+                                }
+                                Console.WriteLine();
+                                var dormir = "Agora vou voltar a dormir" + Environment.NewLine + "Tchau!";
+
+                                foreach (var character in dormir)
+                                {
+                                    Console.Write(character);
+                                    Thread.Sleep(30);
+                                }
+                                Environment.Exit(0);
+                            }
+                            else if (Console.ReadKey().Key == ConsoleKey.N)
+                            {
+                                Console.Clear();
+                                var acertou = "Então foi essa aqui! "
+                                + Environment.NewLine +
+                                                        " _____ "
+                                + Environment.NewLine + "|8    |"
+                                + Environment.NewLine + "|^ ^ ^|"
+                                + Environment.NewLine + "| ^ ^ |"
+                                + Environment.NewLine + "|^ ^ ^|"
+                                + Environment.NewLine + "|____8|";
+
+                                foreach (var character in acertou)
+                                {
+                                    Console.Write(character);
+                                    Thread.Sleep(30);
+                                }
+                                Console.WriteLine();
+                                var dormir = "Agora vou voltar a dormir" + Environment.NewLine + "Tchau!";
+
+                                foreach (var character in dormir)
+                                {
+                                    Console.Write(character);
+                                    Thread.Sleep(30);
+                                }
+                                Environment.Exit(0);
+                            }
+
+                        }
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Te falta ódio...");
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Te falta ódio...");
+            }
+        }
+    }
+
+    internal class ConsoleSpinner
+    {
+        private int _currentAnimationFrame;
+
+        public ConsoleSpinner()
+        {
+            SpinnerAnimationFrames = new[]
+                                     {
+                                         '|',
+                                         '/',
+                                         '-',
+                                         '\\'
+                                     };
+        }
+
+        public char[] SpinnerAnimationFrames { get; set; }
+
+        public void UpdateProgress()
+        {
+            // Store the current position of the cursor
+            var originalX = Console.CursorLeft;
+            var originalY = Console.CursorTop;
+
+            // Write the next frame (character) in the spinner animation
+            Console.Write(SpinnerAnimationFrames[_currentAnimationFrame]);
+
+            // Keep looping around all the animation frames
+            _currentAnimationFrame++;
+            if (_currentAnimationFrame == SpinnerAnimationFrames.Length)
+            {
+                _currentAnimationFrame = 0;
+            }
+
+            // Restore cursor to original position
+            Console.SetCursorPosition(originalX, originalY);
+        }
+    }
+    public class ProgressBar : IDisposable, IProgress<double>
+    {
+        private const int blockCount = 10;
+        private readonly TimeSpan animationInterval = TimeSpan.FromSeconds(1.0 / 8);
+        private const string animation = @"|/-\";
+
+        private readonly Timer timer;
+
+        private double currentProgress = 0;
+        private string currentText = string.Empty;
+        private bool disposed = false;
+        private int animationIndex = 0;
+
+        public ProgressBar()
+        {
+            timer = new Timer(TimerHandler);
+
+            // A progress bar is only for temporary display in a console window.
+            // If the console output is redirected to a file, draw nothing.
+            // Otherwise, we'll end up with a lot of garbage in the target file.
+            if (!Console.IsOutputRedirected)
+            {
+                ResetTimer();
+            }
+        }
+
+        public void Report(double value)
+        {
+            // Make sure value is in [0..1] range
+            value = Math.Max(0, Math.Min(1, value));
+            Interlocked.Exchange(ref currentProgress, value);
+        }
+
+        private void TimerHandler(object state)
+        {
+            lock (timer)
+            {
+                if (disposed) return;
+
+                int progressBlockCount = (int)(currentProgress * blockCount);
+                int percent = (int)(currentProgress * 100);
+                string text = string.Format("[{0}{1}] {2,3}% {3}",
+                    new string('#', progressBlockCount), new string('-', blockCount - progressBlockCount),
+                    percent,
+                    animation[animationIndex++ % animation.Length]);
+                UpdateText(text);
+
+                ResetTimer();
+            }
+        }
+
+        private void UpdateText(string text)
+        {
+            // Get length of common portion
+            int commonPrefixLength = 0;
+            int commonLength = Math.Min(currentText.Length, text.Length);
+            while (commonPrefixLength < commonLength && text[commonPrefixLength] == currentText[commonPrefixLength])
+            {
+                commonPrefixLength++;
+            }
+
+            // Backtrack to the first differing character
+            StringBuilder outputBuilder = new StringBuilder();
+            outputBuilder.Append('\b', currentText.Length - commonPrefixLength);
+
+            // Output new suffix
+            outputBuilder.Append(text.Substring(commonPrefixLength));
+
+            // If the new text is shorter than the old one: delete overlapping characters
+            int overlapCount = currentText.Length - text.Length;
+            if (overlapCount > 0)
+            {
+                outputBuilder.Append(' ', overlapCount);
+                outputBuilder.Append('\b', overlapCount);
+            }
+
+            Console.Write(outputBuilder);
+            currentText = text;
+        }
+
+        private void ResetTimer()
+        {
+            timer.Change(animationInterval, TimeSpan.FromMilliseconds(-1));
+        }
+
+        public void Dispose()
+        {
+            lock (timer)
+            {
+                disposed = true;
+                UpdateText(string.Empty);
+            }
+        }
+
+    }
+}
